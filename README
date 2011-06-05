@@ -1,0 +1,1 @@
+This set of functions/package will access data/etc. from the Spring journals and books using their API. The user needs to register for their own API's for each of metadata, images, and openaccess here: http://dev.springer.com/page
