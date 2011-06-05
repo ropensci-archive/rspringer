@@ -1,0 +1,5 @@
+import(RJSONIO)
+import(RCurl)
+import(XML)
+# searches
+export(springer_metadata)
