@@ -25,7 +25,7 @@ springer_metadata <- function(terms, limit, startrecord = NA,
 # Examples:
 #   options(metdatkey = "2pn639bshyrju39zfewygkgd")
 #   springer_metadata(terms = 'biotechnology', limit = 5)
-  args <- list(api_key = key)
+  args <- list(api_key = apikey)
   if(!is.na(terms))
     args$q <- terms
   if(!is.na(limit))
