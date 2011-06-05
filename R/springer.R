@@ -14,7 +14,7 @@ opackey <- "4qv484abnnptychrn52y9rb4"
 # FUNCTIONS
 springer_metadata <- function(terms, limit, startrecord = NA,
   url = 'http://api.springer.com/metadata/json',
-  apikey = getOption("metdatkey", stop("need a metadata API key for Springer Journals"))) {
+  apikey = getOption("metdatkey", stop("need a metadata API key for Springer Journals")), ..., curl=getCurlHandle()) {
 # Default function to search Springer metadata
 # Args:
 #   terms: search terms (character)
@@ -25,6 +25,7 @@ springer_metadata <- function(terms, limit, startrecord = NA,
 # Examples:
 #   options(metdatkey = "2pn639bshyrju39zfewygkgd")
 #   springer_metadata(terms = 'biotechnology', limit = 5)
+#   springer_metadata(terms = 'dna', limit = 5, verbose=TRUE) #debug mode
   args <- list(api_key = apikey)
   if(!is.na(terms))
     args$q <- terms
@@ -33,7 +34,7 @@ springer_metadata <- function(terms, limit, startrecord = NA,
   if(!is.na(startrecord))
     args$s <- startrecord
   tt <- getForm(url, 
-    .params = args)
+    .params = args, ..., curl=curl)
   jsonout <- fromJSON(tt)
   tempresults <- jsonout$records
   numres <- length(tempresults) # number of search results
