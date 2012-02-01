@@ -18,7 +18,7 @@
 #` springer_images(terms = 'dna', limit = 5, verbose=TRUE) #debug mode
 springer_images <-function(terms, limit, startrecord = NA,
   url = 'http://api.springer.com/images/json',
-  key = getOption("springerimageskey", stop("need an images API key for Springer Journals")),
+  key = getOption("SpringerImagesKey", stop("need an images API key for Springer Journals")),
   ...,
   curl = getCurlHandle()) 
 {  
