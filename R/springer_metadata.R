@@ -13,7 +13,7 @@ springer_metadata <-
 #   springer_metadata(terms = 'dna', limit = 5, verbose=TRUE) #debug mode
 function(terms, limit, startrecord = NA,
   url = 'http://api.springer.com/metadata/json',
-  key = getOption("springermetdatkey", stop("need a metadata API key for Springer Journals")),
+  key = getOption("SpringerMetdataKey", stop("need a metadata API key for Springer Journals")),
   ...,
   curl = getCurlHandle()) 
 {  
