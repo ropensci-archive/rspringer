@@ -13,7 +13,7 @@ springer_OA <-
 #   springer_OA(terms = 'dna', limit = 5, verbose=TRUE) #debug mode
 function(terms, limit, startrecord = NA,
   url = 'http://api.springer.com/openaccess/json',
-  key = getOption("springeropackey", stop("need an open access API key for Springer Journals")),
+  key = getOption("SpringerOAKey", stop("need an open access API key for Springer Journals")),
   ...,
   curl = getCurlHandle()) 
 {  
