@@ -1,17 +1,22 @@
-# springer_images.R, search Springer images
-
-springer_images <- 
-# Default function to search Springer images
-# Args:
-#   terms: search terms (character)
-#   limit: number of results to return (integer)
-#   startrecord: return results starting at the number specified (integer)
-#   fields: fields to return from search (character) [e.g., 'id,title'], 
+#` springer_images.R
+#` 
+#` Default function to search images in Springer journals
+#` @param "terms" Search terms
+#` @param "limit" Number of results
+#` @param "startrecord" Offset if continuing from earlier search
+#` @param "url" API pattern
+#` @param "key" Your Springer key (available here: http://dev.springer.com/)
+#`   fields: fields to return from search (character) [e.g., 'id,title'], 
 #     any combination of search fields [see plosfields$field] 
-# Examples:
-#   springer_images(terms = 'dna', limit = 5)
-#   springer_images(terms = 'dna', limit = 5, verbose=TRUE) #debug mode
-function(terms, limit, startrecord = NA,
+#` @keywords Literature, Springer
+#` @seealso rplos (https://github.com/ropensci/rplos)
+#` @return List
+#` @alias none
+#` @export 
+#` @examples
+#` springer_images(terms = 'dna', limit = 5)
+#` springer_images(terms = 'dna', limit = 5, verbose=TRUE) #debug mode
+springer_images <-function(terms, limit, startrecord = NA,
   url = 'http://api.springer.com/images/json',
   key = getOption("springerimageskey", stop("need an images API key for Springer Journals")),
   ...,
@@ -34,3 +39,4 @@ function(terms, limit, startrecord = NA,
   dfresults <- data.frame( do.call(rbind, tempresults) )
   return(list(numres, dfresults))
 }
+# Limited to 1 call per second. 5000/day max.

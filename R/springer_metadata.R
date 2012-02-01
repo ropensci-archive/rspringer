@@ -34,3 +34,4 @@ function(terms, limit, startrecord = NA,
   dfresults <- data.frame( do.call(rbind, tempresults) )
   return(list(numres, dfresults))
 }
+# Limited to 5 calls per second. 5000/day max.
