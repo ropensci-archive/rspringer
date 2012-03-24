@@ -1,16 +1,17 @@
-# springer_OA.R, search Springer open access material
-
-springer_OA <- 
-# Default function to search Springer open access material
-# Args:
-#   terms: search terms (character)
-#   limit: number of results to return (integer)
-#   startrecord: return results starting at the number specified (integer)
-#   fields: fields to return from search (character) [e.g., 'id,title'], 
-#     any combination of search fields [see plosfields$field] 
-# Examples:
-#   springer_OA(terms = 'dna', limit = 5)
-#   springer_OA(terms = 'dna', limit = 5, verbose=TRUE) #debug mode
+#' Default function to search Springer open access material
+#' @param terms search terms (character)
+#' @param limit number of results to return (integer)
+#' @param startrecord return results starting at the number specified (integer)
+#' @param fields fields to return from search (character) [e.g., 'id,title'], 
+#'     any combination of search fields [see plosfields$field] 
+#' @return Number of search results and results in a data.frame.
+#' @export
+#' @examples \dontrun{
+#' springer_oa(terms = 'dna', limit = 5)
+#' springer_oa(terms = 'dna', limit = 5, verbose=TRUE) #debug mode
+#' }
+springer_oa <- 
+  
 function(terms, limit, startrecord = NA,
   url = 'http://api.springer.com/openaccess/json',
   key = getOption("SpringerOAKey", stop("need an open access API key for Springer Journals")),
