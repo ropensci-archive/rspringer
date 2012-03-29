@@ -1,5 +1,7 @@
-import(RJSONIO)
+export(spimages)
+export(spmetadata)
+export(spoa)
+export(spoafulltext)
 import(RCurl)
+import(RJSONIO)
 import(XML)
-# searches
-export(springer_metadata, springer_images, springer_OA)
