@@ -1,4 +1,4 @@
-# README # 
+# `rspringer` # 
 
 `rspringer` provides programmatic access to the Springer API via R as part of the `ropensci` suite (see http://ropensci.org for more information).
 
