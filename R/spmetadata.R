@@ -18,8 +18,7 @@
 spmetadata <- function(terms = NA, limit = NA, startrecord = NA,
   url = 'http://api.springer.com/metadata/json',
   key = getOption("SpringerMetdataKey", stop("need a metadata API key for Springer Journals")),
-  ...,
-  curl = getCurlHandle()) 
+  ...,  curl = getCurlHandle()) 
 {  
   args <- list(api_key = key)
   if(!is.na(terms))

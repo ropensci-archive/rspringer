@@ -17,11 +17,10 @@
 #' spimages(terms = 'dna', limit = 5)
 #' spimages(terms = 'dna', limit = 5, verbose=TRUE) #debug mode
 #' }
-spimages <-function(terms, limit, startrecord = NA,
+spimages <- function(terms, limit, startrecord = NA,
   url = 'http://api.springer.com/images/json',
   key = getOption("SpringerImagesKey", stop("need an images API key for Springer Journals")),
-  ...,
-  curl = getCurlHandle())
+  ..., curl = getCurlHandle())
 {
   args <- list(api_key = key)
   if(!is.na(terms))

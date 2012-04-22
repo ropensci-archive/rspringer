@@ -20,8 +20,7 @@
 spoa <- function(terms, limit, startrecord = NA,
   url = 'http://api.springer.com/openaccess/json',
   key = getOption("SpringerOAKey", stop("need an open access API key for Springer Journals")),
-  ...,
-  curl = getCurlHandle()) 
+  ..., curl = getCurlHandle()) 
 {  
   args <- list(api_key = key)
   if(!is.na(terms))
