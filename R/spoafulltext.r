@@ -1,4 +1,5 @@
 #' Get full text BioMedCentral (BMC) content from a given DOI.
+#' 
 #' @import RCurl XML
 #' @param doi DOI of the article.
 #' @param section Section of the paper you want returned (see options in help).
@@ -8,11 +9,11 @@
 #' @param curl If using in a loop, call getCurlHandle() first and pass 
 #'  the returned value in here (avoids unnecessary footprint) 
 #' @return Full text of section of paper, or whole paper.
-#' @export
 #' @examples \dontrun{
 #' spoafulltext(doi = '10.1186/1472-6785-11-29', section = 'abstract')
 #' spoafulltext(doi = '10.1186/1472-6785-11-29', section = 'body')
 #' }
+#' @export
 spoafulltext <- function(doi, 
   section = list("abstract","introduction","methods","results",
                 "discussion","conclusion","all","references"), 

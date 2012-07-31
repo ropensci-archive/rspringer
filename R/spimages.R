@@ -1,4 +1,5 @@
 #' Search open access springer images.
+#' 
 #' @import RCurl XML RJSONIO
 #' @param terms search terms (character)
 #' @param limit number of results to return (integer)
@@ -12,11 +13,11 @@
 #' @seealso rplos (https://github.com/ropensci/rplos)
 #' @return List
 #' @details Limited to 1 call per second. 5000/day max.
-#' @export
 #' @examples \dontrun{
 #' spimages(terms = 'dna', limit = 5)
 #' spimages(terms = 'dna', limit = 5, verbose=TRUE) #debug mode
 #' }
+#' @export
 spimages <- function(terms, limit, startrecord = NA,
   url = 'http://api.springer.com/images/json',
   key = getOption("SpringerImagesKey", stop("need an images API key for Springer Journals")),
@@ -30,12 +31,10 @@ spimages <- function(terms, limit, startrecord = NA,
   if(!is.na(startrecord))
     args$s <- startrecord
   tt <- getForm(url,
-    .params = args, ...,
+    .params = args, 
+  	...,
     curl = curl)
   jsonout <- fromJSON(tt)
   tempresults <- jsonout$records
-  numres <- length(tempresults) # number of search results
-  names(numres) <- 'Number of search results'
-  dfresults <- data.frame( do.call(rbind, tempresults) )
-  list(numres, dfresults)
+  data.frame( do.call(rbind, tempresults) )
 }

@@ -1,5 +1,10 @@
 # rspringer #
 
+
+UPDATE - THE SPRINGER API IS A MESS AS FAR AS WE CAN TELL. E.G., YOU CAN'T GET MORE THAN 20 OR SO RECORDS BACK IN AN API CALL, AND THE JSON RETURNED RESPONSE IS DIFFERENT FROM XML (IT DOESN'T INCLUDE THE ABSTRACT FOR EXAMPLE). WILL POSSIBLY WORK ON THIS AGAIN WHEN THEIR API IS IMPROVED... BAD API'S MAKE ME SAD --> :(
+
+
+
 `rspringer` provides programmatic access to the Springer API via R as part of the `ropensci` suite (see http://ropensci.org for more information).
 
 ## Usage
