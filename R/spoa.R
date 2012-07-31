@@ -14,7 +14,7 @@
 #' @return Number of search results and results in a data.frame.
 #' @details Limited to 5 calls per second; 5000/day max.
 #' @examples \dontrun{
-#' spoa(terms = 'dna', limit = 5)
+#' spoa(terms = 'dna', limit = 99)
 #' spoa(terms = 'dna', limit = 5, verbose=TRUE) #debug mode
 #' }
 #' @export
